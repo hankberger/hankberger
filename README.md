@@ -1,3 +1,4 @@
+<!--
 <div align="center">
 
 [![Portfolio](https://img.shields.io/badge/-FF2D55?style=for-the-badge&logo=googlechrome&logoColor=white&logoSize=auto)](https://www.h4nk.com/)
@@ -6,3 +7,4 @@
 [![Instagram](https://img.shields.io/badge/-FFBA08?style=for-the-badge&logo=instagram&logoColor=white&logoSize=auto)](https://www.instagram.com/h4nkdog/)
 
 </div>
+-->
