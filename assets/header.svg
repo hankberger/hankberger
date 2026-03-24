@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF2D55;stop-opacity:1">
+        <animate attributeName="stop-color" values="#FF2D55;#FF6B35;#FFBA08;#FF2D55" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#BF00FF;stop-opacity:1">
+        <animate attributeName="stop-color" values="#BF00FF;#FF2D55;#BF00FF;#BF00FF" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#00D4FF;stop-opacity:1">
+        <animate attributeName="stop-color" values="#00D4FF;#BF00FF;#FF2D55;#00D4FF" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF2D55;stop-opacity:0.6">
+        <animate attributeName="stop-color" values="#FF2D55;#FFBA08;#00D4FF;#FF2D55" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#00D4FF;stop-opacity:0.6">
+        <animate attributeName="stop-color" values="#00D4FF;#BF00FF;#FF6B35;#00D4FF" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="textClip">
+      <text x="400" y="135" font-family="'Arial Black', 'Impact', sans-serif" font-size="90" font-weight="900" text-anchor="middle" letter-spacing="4">HANK BERGER</text>
+    </clipPath>
+  </defs>
+
+  <style>
+    @keyframes slideIn { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+    @keyframes dash { to { stroke-dashoffset: 0; } }
+    @keyframes float1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(15px, -10px); } }
+    @keyframes float2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-10px, 12px); } }
+    @keyframes float3 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(8px, 8px); } }
+    @keyframes scanline { 0% { transform: translateY(-280px); } 100% { transform: translateY(280px); } }
+  </style>
+
+  <!-- Background -->
+  <rect width="800" height="280" fill="#0D0D0D"/>
+
+  <!-- Animated grid lines -->
+  <g opacity="0.08">
+    <line x1="0" y1="70" x2="800" y2="70" stroke="#FF2D55" stroke-width="0.5"/>
+    <line x1="0" y1="140" x2="800" y2="140" stroke="#BF00FF" stroke-width="0.5"/>
+    <line x1="0" y1="210" x2="800" y2="210" stroke="#00D4FF" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="280" stroke="#FF2D55" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="280" stroke="#BF00FF" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="280" stroke="#00D4FF" stroke-width="0.5"/>
+  </g>
+
+  <!-- Floating geometric shapes -->
+  <g style="animation: float1 6s ease-in-out infinite;">
+    <polygon points="80,40 100,15 120,40" fill="none" stroke="#FF2D55" stroke-width="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+  <g style="animation: float2 8s ease-in-out infinite;">
+    <rect x="680" y="30" width="30" height="30" fill="none" stroke="#00D4FF" stroke-width="1.5" opacity="0.5" transform="rotate(45 695 45)">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g style="animation: float3 7s ease-in-out infinite;">
+    <circle cx="720" cy="220" r="15" fill="none" stroke="#BF00FF" stroke-width="1.5" opacity="0.4">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g style="animation: float1 9s ease-in-out infinite;">
+    <polygon points="60,230 75,210 90,230 75,250" fill="none" stroke="#FFBA08" stroke-width="1.5" opacity="0.4">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Accent lines -->
+  <line x1="50" y1="175" x2="280" y2="175" stroke="url(#grad2)" stroke-width="2" stroke-dasharray="230" stroke-dashoffset="230" opacity="0.7">
+    <animate attributeName="stroke-dashoffset" from="230" to="0" dur="1.5s" fill="freeze" begin="0.5s"/>
+  </line>
+  <line x1="520" y1="175" x2="750" y2="175" stroke="url(#grad2)" stroke-width="2" stroke-dasharray="230" stroke-dashoffset="230" opacity="0.7">
+    <animate attributeName="stroke-dashoffset" from="230" to="0" dur="1.5s" fill="freeze" begin="0.5s"/>
+  </line>
+
+  <!-- Main title -->
+  <text x="400" y="135" font-family="'Arial Black', 'Impact', sans-serif" font-size="90" font-weight="900" text-anchor="middle" fill="url(#grad1)" filter="url(#glow)" letter-spacing="4">HANK BERGER</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="215" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="20" font-weight="300" text-anchor="middle" fill="#AAAAAA" letter-spacing="12" opacity="0">
+    3D ARTIST  ·  MOTION DESIGNER
+    <animate attributeName="opacity" from="0" to="1" dur="1s" fill="freeze" begin="0.8s"/>
+  </text>
+
+  <!-- Bottom accent bar -->
+  <rect x="300" y="245" width="200" height="3" rx="1.5" fill="url(#grad1)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.8" dur="0.8s" fill="freeze" begin="1.2s"/>
+    <animate attributeName="width" from="0" to="200" dur="0.8s" fill="freeze" begin="1.2s"/>
+    <animate attributeName="x" from="400" to="300" dur="0.8s" fill="freeze" begin="1.2s"/>
+  </rect>
+
+  <!-- Scanline effect -->
+  <rect x="0" y="0" width="800" height="4" fill="white" opacity="0.02" style="animation: scanline 3s linear infinite;"/>
+</svg>
